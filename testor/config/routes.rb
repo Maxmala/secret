@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "home#index" 
+  
+    devise_for :users
+	get "users/:id", to: "home#index"
+	get "/", to: "home#index" 
+	get "users/:id/club", to: "clubs#club", as: "club"
+
 end
